@@ -24,6 +24,7 @@ export const Timer = ({ name }) => {
     <div className="timer-container">
       <h2>{name}</h2>
       <input
+        className="input-field"
         disabled={isCountDownRunning}
         type="number"
         value={seconds}
@@ -31,14 +32,15 @@ export const Timer = ({ name }) => {
           setSeconds(event.target.value);
         }}
       />
-      <button
+      <div
+        className="btn-start"
         onClick={() => {
           setIsCountDownRunning(true);
           setShouldAlert(true);
         }}
       >
-        Start Countdown
-      </button>
+        <p>Start</p>
+      </div>
     </div>
   );
 };

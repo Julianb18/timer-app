@@ -17,14 +17,21 @@ export const TimerManager = () => {
           setName("");
         }}
       >
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <button>Add New Timer</button>
+        <div className="timer-container">
+          <h2>Add a Timer</h2>
+          <div>
+            <input
+              className="input-field"
+              type="text"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            />
+
+            <button className="btn">Add</button>
+          </div>
+        </div>
       </form>
 
       {timerNames.map((timerName) => (
