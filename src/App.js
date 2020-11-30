@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Timer } from "./components/Timer";
+import { TimerManager } from "./components/TimerManager";
 
 function App() {
   return (
     <div className="App">
-      <Timer name="workout" />
+      <TimerManager />
     </div>
   );
 }

@@ -4,7 +4,6 @@ export const Timer = ({ name }) => {
   const [seconds, setSeconds] = useState("60");
   const [isCountDownRunning, setIsCountDownRunning] = useState(false);
   const [shouldAlert, setShouldAlert] = useState(false);
-  console.log("Timer.render seconds: ", seconds);
 
   useEffect(() => {
     const secondsLeft = parseInt(seconds);
@@ -14,7 +13,7 @@ export const Timer = ({ name }) => {
       }, 1000);
     } else {
       if (shouldAlert) {
-        alert("The Countdown is over");
+        alert(`The ${name} timer is done!`);
         setShouldAlert(false);
       }
       setIsCountDownRunning(false);
@@ -22,8 +21,8 @@ export const Timer = ({ name }) => {
   }, [isCountDownRunning, seconds]);
 
   return (
-    <div>
-      {name}
+    <div className="timer-container">
+      <h2>{name}</h2>
       <input
         disabled={isCountDownRunning}
         type="number"
