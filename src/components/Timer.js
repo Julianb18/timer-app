@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export const Timer = ({ name }) => {
-  const [seconds, setSeconds] = useState("60");
+  const [seconds, setSeconds] = useState("0");
   const [isCountDownRunning, setIsCountDownRunning] = useState(false);
   const [shouldAlert, setShouldAlert] = useState(false);
 
@@ -22,9 +22,9 @@ export const Timer = ({ name }) => {
 
   return (
     <div className="timer-container">
-      <h2>{name}</h2>
+      <h2 className="timer-header">{name}</h2>
       <input
-        className="input-field"
+        className={isCountDownRunning ? "input-disabled" : "counter-field"}
         disabled={isCountDownRunning}
         type="number"
         value={seconds}

@@ -3,13 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(20, 58, 80);
+}
 .App {
   height: 100vh;
   display: flex;
   justify-content: center;
   /* align-items: center; */
   padding: 40px 0;
-  background-color: rgb(20, 58, 80);
+  font-family: "Indie Flower", cursive;
 }
 
 .timer-container {
@@ -24,27 +28,55 @@
   color: rgb(248, 248, 248);
   box-shadow: 6px 6px 11px #0b202c, -6px -6px 11px #194e6d;
 }
+.main-header {
+  font-size: 2em;
+  margin: 10px 0 20px 0;
+  align-self: flex-start;
+}
+
+.timer-header {
+  margin: 10px 0 20px 0;
+  font-size: 1.8em;
+}
 
 .input-field {
   all: unset;
   background-color: rgb(20, 58, 80);
-  padding: 7px;
+  padding: 7px 15px;
+  width: 15em;
   border-radius: 10px;
   margin-right: 10px;
   box-shadow: inset 5px 5px 11px #0b1e29, inset -5px -5px 11px #1b5a80;
+}
+
+.counter-field {
+  all: unset;
+  background-color: rgb(20, 58, 80);
+  padding: 7px 15px;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 11px #0b1e29, inset -5px -5px 11px #1b5a80;
+}
+
+.input-disabled {
+  all: unset;
+  background-color: rgb(65, 76, 83);
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 11px #1d282e, inset -5px -5px 11px #5c6a72;
 }
 
 .btn {
   all: unset;
   color: white;
   background-color: rgb(24, 116, 8);
-  box-shadow: 5px 5px 11px #0b202c, -5px -5px 11px #114a6b;
+  box-shadow: 5px 5px 11px #0b202c, -5px -5px 11px #0f405d;
   padding: 10px 25px;
   border-radius: 10px;
 }
 .btn:hover {
   cursor: pointer;
   box-shadow: inset 5px 5px 11px #0b2c13, inset -5px -5px 11px #116b20;
+  transform: scale(0.95);
 }
 
 .btn-start {
@@ -54,41 +86,14 @@
   margin-top: 30px;
   color: white;
   background-color: rgb(24, 116, 8);
-  box-shadow: 5px 5px 11px #0b202c, -5px -5px 11px #114a6b;
+  box-shadow: 5px 5px 11px #0b202c, -5px -5px 11px #0f405d;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .btn-start:hover {
   cursor: pointer;
   box-shadow: inset 5px 5px 11px #0b2c13, inset -5px -5px 11px #116b20;
-}
-
-.input-field-number {
-  all: unset;
-  position: relative;
-}
-
-.input-field-number:after,
-.input-field-number:before {
-  position: absolute;
-  left: 5px;
-  width: 1.6em;
-  height: 0.9em;
-  font-size: 10px;
-  pointer-events: none;
-  background: #fff;
-}
-
-.input-field-number:after {
-  color: blue;
-  content: "";
-  margin-top: 1px;
-}
-
-.input-field-number:before {
-  color: red;
-  content: "";
-  margin-bottom: 5px;
-  bottom: -0.5em;
+  transform: scale(0.95);
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Timer } from "./Timer";
 
 export const TimerManager = () => {
-  const [timerNames, setTimerNames] = useState(["Workout", "Chicken", "Study"]);
+  const [timerNames, setTimerNames] = useState(["Study"]);
 
   const [name, setName] = useState("");
 
@@ -18,7 +18,7 @@ export const TimerManager = () => {
         }}
       >
         <div className="timer-container">
-          <h2>Add a Timer</h2>
+          <h2 className="main-header">Add a Timer</h2>
           <div>
             <input
               className="input-field"
