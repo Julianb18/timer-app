@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
+import { GlobalContext } from "../context/GlobalState";
 
 export const Timer = ({ name }) => {
   const [seconds, setSeconds] = useState("0");
   const [isCountDownRunning, setIsCountDownRunning] = useState(false);
   const [shouldAlert, setShouldAlert] = useState(false);
 
+  const { timerNames, removeTimerName } = useContext(GlobalContext);
+
+  console.log(name);
   useEffect(() => {
     const secondsLeft = parseInt(seconds);
     if (isCountDownRunning && secondsLeft > 0) {
@@ -22,6 +27,14 @@ export const Timer = ({ name }) => {
 
   return (
     <div className="timer-container">
+      <div
+        className="remove-timer"
+        onClick={() => {
+          removeTimerName(timerNames.name);
+        }}
+      >
+        X
+      </div>
       <h2 className="timer-header">{name}</h2>
       <input
         className={isCountDownRunning ? "input-disabled" : "counter-field"}

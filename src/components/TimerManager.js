@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Timer } from "./Timer";
+import { GlobalContext } from "../context/GlobalState";
 
 export const TimerManager = () => {
-  const [timerNames, setTimerNames] = useState(["Study"]);
-
+  // const [timerNames, setTimerNames] = useState(["Study"]);
   const [name, setName] = useState("");
+  const { timerNames, addTimerName } = useContext(GlobalContext);
 
   return (
     <div>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          const copyOfTimerNames = [...timerNames];
-          copyOfTimerNames.push(name);
-          setTimerNames(copyOfTimerNames);
+          addTimerName(name);
+          console.log(timerNames);
+
+          // const copyOfTimerNames = [...timerNames];
+          // copyOfTimerNames.push(name);
+          // setTimerNames(copyOfTimerNames);
           setName("");
         }}
       >
@@ -35,7 +39,7 @@ export const TimerManager = () => {
       </form>
 
       {timerNames.map((timerName) => (
-        <Timer name={timerName} />
+        <Timer name={timerName} key={timerName} />
       ))}
     </div>
   );

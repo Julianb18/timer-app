@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import { TimerManager } from "./components/TimerManager";
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    <div className="App">
-      <TimerManager />
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        <TimerManager />
+      </div>
+    </GlobalProvider>
   );
 }
 
