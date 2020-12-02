@@ -6,6 +6,7 @@ export const TimerManager = () => {
   // const [timerNames, setTimerNames] = useState(["Study"]);
   const [name, setName] = useState("");
   const { timerNames, addTimerName } = useContext(GlobalContext);
+  console.log(timerNames);
 
   return (
     <div>
@@ -39,7 +40,7 @@ export const TimerManager = () => {
       </form>
 
       {timerNames.map((timerName) => (
-        <Timer name={timerName} key={timerName} />
+        <Timer name={timerName.tName} key={timerName.id} />
       ))}
     </div>
   );

@@ -14,7 +14,7 @@ export const AppReducer = (state, action) => {
         timerNames: [
           ...state.timerNames,
           {
-            name: action.payload,
+            tName: action.payload,
             id: nextId(state.timerNames),
           },
         ],
@@ -24,7 +24,7 @@ export const AppReducer = (state, action) => {
       return {
         ...state,
         timerNames: state.timerNames.filter(
-          (name) => name.timerName !== action.payload
+          (name) => name.id !== action.payload
         ),
       };
 
