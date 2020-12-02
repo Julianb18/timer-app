@@ -6,7 +6,7 @@ export const TimerManager = () => {
   // const [timerNames, setTimerNames] = useState(["Study"]);
   const [name, setName] = useState("");
   const { timerNames, addTimerName } = useContext(GlobalContext);
-  console.log(timerNames);
+  // console.log(timerNames);
 
   return (
     <div>
@@ -14,7 +14,7 @@ export const TimerManager = () => {
         onSubmit={(event) => {
           event.preventDefault();
           addTimerName(name);
-          console.log(timerNames);
+          // console.log(timerNames);
 
           // const copyOfTimerNames = [...timerNames];
           // copyOfTimerNames.push(name);

@@ -24,7 +24,7 @@ export const AppReducer = (state, action) => {
       return {
         ...state,
         timerNames: state.timerNames.filter(
-          (name) => name.id !== action.payload
+          (timerNames) => timerNames.id !== action.payload
         ),
       };
 

@@ -9,7 +9,8 @@ export const Timer = ({ name }) => {
 
   const { timerNames, removeTimerName } = useContext(GlobalContext);
 
-  console.log(name);
+  console.log(timerNames.id);
+  // console.log("over Here", timerNames);
   useEffect(() => {
     const secondsLeft = parseInt(seconds);
     if (isCountDownRunning && secondsLeft > 0) {
@@ -30,7 +31,8 @@ export const Timer = ({ name }) => {
       <div
         className="remove-timer"
         onClick={() => {
-          removeTimerName(timerNames.name);
+          removeTimerName(timerNames.id);
+          // console.log(name.id);
         }}
       >
         X
