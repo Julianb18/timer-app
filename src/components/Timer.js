@@ -2,15 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { GlobalContext } from "../context/GlobalState";
 
-export const Timer = ({ name }) => {
+export const Timer = ({ name, id }) => {
   const [seconds, setSeconds] = useState("0");
   const [isCountDownRunning, setIsCountDownRunning] = useState(false);
   const [shouldAlert, setShouldAlert] = useState(false);
 
-  const { timerNames, removeTimerName } = useContext(GlobalContext);
+  const { removeTimerName } = useContext(GlobalContext);
 
-  console.log(timerNames.id);
-  // console.log("over Here", timerNames);
+  console.log(id);
   useEffect(() => {
     const secondsLeft = parseInt(seconds);
     if (isCountDownRunning && secondsLeft > 0) {
@@ -24,15 +23,15 @@ export const Timer = ({ name }) => {
       }
       setIsCountDownRunning(false);
     }
-  }, [isCountDownRunning, seconds]);
+  }, [isCountDownRunning, seconds, name, shouldAlert]);
 
   return (
     <div className="timer-container">
       <div
         className="remove-timer"
         onClick={() => {
-          removeTimerName(timerNames.id);
-          // console.log(name.id);
+          removeTimerName(id);
+          console.log(id);
         }}
       >
         X

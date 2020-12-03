@@ -40,7 +40,7 @@ export const TimerManager = () => {
       </form>
 
       {timerNames.map((timerName) => (
-        <Timer name={timerName.tName} key={timerName.id} />
+        <Timer name={timerName.tName} id={timerName.id} key={timerName.id} />
       ))}
     </div>
   );
